@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Items from "./Items";
+import styles from "./ItemBox.module.css";
 
 function ItemBox() {
   const [order, setOrder] = useState(0);
@@ -16,16 +17,18 @@ function ItemBox() {
     }
   };
   return (
-    <div>
-      {itemList.map((items, i) => (
-        <Items
-          order={i + 1}
-          key={i}
-          name={i}
-          handleDeleteItemBox={handleDeleteItemBox}
-        />
-      ))}
-      <button onClick={handleClick}>정보 고시 추가</button>
+    <div className={styles.itemContainer}>
+      <div className={styles.itemBox}>
+        {itemList.map((items, i) => (
+          <Items
+            order={i + 1}
+            key={i}
+            name={i}
+            handleDeleteItemBox={handleDeleteItemBox}
+          />
+        ))}
+      </div>
+      <button onClick={handleClick}>+ 정보고시 추가</button>
     </div>
   );
 }

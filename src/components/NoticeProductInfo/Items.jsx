@@ -32,7 +32,7 @@ function Items({ order, name, handleDeleteItemBox }) {
   const handleDelete = (e) => {
     e.preventDefault();
     const targetI = Number(e.target.name);
-    if (targetI > 5) {
+    if (targetI >= 5) {
       setLabelArr((arr) => arr.filter((item, i) => i !== targetI));
     } else {
       setNewItemTitle("");
@@ -45,10 +45,12 @@ function Items({ order, name, handleDeleteItemBox }) {
   }, []);
   return (
     <div className={styles.flexBox} name={name}>
-      <div>정보고시 {order}</div>
-      <button name={name} onClick={handleDeleteItemBox}>
-        삭제
-      </button>
+      <div className={styles.itemHead}>
+        <span>정보고시 {order}</span>
+        <button name={name} onClick={handleDeleteItemBox}>
+          삭제
+        </button>
+      </div>
       {labelArr.map((label, i) => (
         <Item
           label={label}

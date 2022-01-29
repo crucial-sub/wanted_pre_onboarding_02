@@ -11,7 +11,6 @@ const OptionSet = ({ id, onDelete, onCreate, optionList, deleteOptionSet }) => {
   const optionListId = id;
 
   const clickHandler = () => {
-    console.log(`clickHandler${optionList.id}`);
     deleteOptionSet(optionList.id);
   };
 

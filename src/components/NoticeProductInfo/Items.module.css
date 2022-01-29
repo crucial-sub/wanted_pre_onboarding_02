@@ -1,4 +1,46 @@
 .flexBox {
   display: flex;
   flex-direction: column;
+  padding: 4%;
+}
+
+.itemHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 5px 20px;
+}
+
+.itemHead > span {
+  font-weight: 700;
+  font-size: 1rem;
+  align-self: center;
+}
+.itemHead > button {
+  border: 1px solid lightgray;
+  width: 50px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.flexBox > button {
+  align-self: flex-start;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 15px 5px 5px;
+  padding: 0 30px;
+  color: darkblue;
+}
+
+.flexBox > div > input {
+  flex: 1 1 45%;
+}
+
+.flexBox > div:nth-child(2) > input,
+.flexBox > div:nth-child(3) > input,
+.flexBox > div:nth-child(4) > input,
+.flexBox > div:nth-child(5) > input,
+.flexBox > div:nth-child(6) > input {
+  flex: 1 1 60%;
 }

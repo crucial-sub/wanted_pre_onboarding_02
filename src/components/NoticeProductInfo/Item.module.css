@@ -1,0 +1,23 @@
+.inputBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputBox > label {
+  margin-left: 15px;
+  transform: translateY(15px);
+  flex: 1 1 30%;
+}
+
+.inputBox > input {
+  padding: 10px;
+}
+
+.inputBox > button {
+  flex: 1 1 11%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 5px;
+  color: crimson;
+}

@@ -14,9 +14,6 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
   };
 
   const deleteOption = (targetId) => {
-    console.log(`${id}가 삭제되었습니다.`);
-    console.log("asd", targetId);
-
     const newOptionProduct = optionProduct.filter((it) => it.id !== targetId);
     setOptionProduct(newOptionProduct);
   };
@@ -40,7 +37,6 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
       ...option,
       [e.target.name]: e.target.value,
     });
-    console.log(option);
   };
 
   const handleNumberChangeState = (e) => {
@@ -56,7 +52,6 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
       });
     }
     e.preventDefault();
-    console.log(option);
     return null;
   };
 

@@ -10,7 +10,6 @@ const OptionEditor = ({ onCreate, optionListId }) => {
     };
     alert("추가 성공");
     onCreate(optionListId, newOption);
-    console.log(optionListId, newOption);
   };
 
   return (

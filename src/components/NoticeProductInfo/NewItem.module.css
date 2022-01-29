@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+}
+
+.form > input:nth-child(1) {
+  flex: 1 1 30%;
+  padding: 10px;
+}
+.form > input:nth-child(2) {
+  flex: 1 1 44%;
+  padding: 10px;
+}
+.form > button {
+  flex: 1 1 10%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 5px;
+  color: crimson;
+}

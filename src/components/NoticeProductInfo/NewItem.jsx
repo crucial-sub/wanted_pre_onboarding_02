@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./NewItem.module.css";
 
 import Input from "layout/Input";
 function NewItem({
@@ -18,7 +19,7 @@ function NewItem({
 
   return (
     <div>
-      <form id={`form-${order}`}>
+      <form id={`form-${order}`} className={styles.form}>
         <Input
           type="text"
           placeholder="항목 제목 자유 입력"
