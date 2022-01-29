@@ -4,16 +4,25 @@ import OptionList from "components/ProductOptions/OptionList";
 import uuid from "utils/uuid";
 import OptionItem from "./OptionItem";
 
-const OptionSet = ({ onDelete, onCreate, optionList, deleteOptionSet, id }) => {
-  const optionListId = optionList.id;
+import Button from "layout/Button";
+import style from "components/ProductOptions/ProductOptions.module.css";
+
+const OptionSet = ({ id, onDelete, onCreate, optionList, deleteOptionSet }) => {
+  const optionListId = id;
+
   const clickHandler = () => {
     console.log(`clickHandler${optionList.id}`);
     deleteOptionSet(optionList.id);
-    //onDelete()
   };
+
   return (
     <>
-      <button onClick={clickHandler}>삭제</button>
+      <div className={style.toRight}>
+        <Button onClick={clickHandler} className={style.deleteBtn} tag="delete">
+          삭제
+        </Button>
+      </div>
+
       <OptionEditor onCreate={onCreate} optionListId={optionList.id} />
       <OptionList onDelete={onDelete} {...optionList} />
       <OptionItem onDelete={onDelete} id={id} optionListId={optionListId} />

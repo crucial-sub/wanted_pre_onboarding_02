@@ -9,19 +9,21 @@
 .save {
   background: var(--maincolor-deepblue);
   color: #fff;
-  outline: 2px solid var(--maincolor-deepblue);
+  outline: 1.8px solid var(--maincolor-deepblue);
+  margin-right: 20px;
 }
 
 .delete {
   background: transparent;
   color: var(--maincolor-red);
 
-  outline: 2px solid var(--maincolor-red);
+  outline: 1.8px solid var(--maincolor-red);
 }
 
 .add {
   background: transparent;
-  outline: 2px solid var(--maincolor-deepblue);
+  outline: 1.8px solid rgb(92 85 167);
+  --outline: 2px solid var(--maincolor-deepblue);
 }
 
 .category {

@@ -1,11 +1,12 @@
 import React from "react";
 import OptionItem from "components/ProductOptions/OptionItem";
+import style from "components/ProductOptions/ProductOptions.module.css";
 
 const OptionList = ({ onDelete, optionList, id }) => {
   const optionListId = id;
 
   return (
-    <div>
+    <div className={style.optionAddContainer}>
       {optionList.map((option, idx) => (
         <OptionItem
           key={option.id}

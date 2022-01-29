@@ -29,30 +29,28 @@ const AddImage = ({ multiple }) => {
   };
 
   return (
-    <SectionBody className={styles.addImage}>
-      <SectionBodyContent className={styles.flexWrapper}>
-        <UploadInput
-          onClick={uploadHandler}
-          onChange={changeFileHandler}
-          uploadRef={uploadRef}
-          multiple={multiple}
-        >
-          + 이미지 추가
-        </UploadInput>
-        <ul>
-          {uploadedImg.map((data) => {
-            return (
-              <li key={data.id}>
-                <div>{data.name}</div>
-                <Button id={data.id} tag="xBadge" onClick={removeHandler}>
-                  ×
-                </Button>
-              </li>
-            );
-          })}
-        </ul>
-      </SectionBodyContent>
-    </SectionBody>
+    <SectionBodyContent className={styles.flexWrapper}>
+      <UploadInput
+        onClick={uploadHandler}
+        onChange={changeFileHandler}
+        uploadRef={uploadRef}
+        multiple={multiple}
+      >
+        + 이미지 첨부
+      </UploadInput>
+      <ul>
+        {uploadedImg.map((data) => {
+          return (
+            <li key={data.id}>
+              <div>{data.name}</div>
+              <Button id={data.id} tag="xBadge" onClick={removeHandler}>
+                ×
+              </Button>
+            </li>
+          );
+        })}
+      </ul>
+    </SectionBodyContent>
   );
 };
 

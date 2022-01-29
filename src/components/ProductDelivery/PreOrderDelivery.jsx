@@ -1,10 +1,13 @@
+import React, { useEffect, useState } from "react";
+
 import Calendar from "layout/Calendar";
 import OnOffButton from "layout/OnOffButton";
 import ContentBodyTitle from "layout/Section/ContentBodyTitle";
 import SectionBody from "layout/Section/SectionBody";
 import SectionBodyContent from "layout/Section/SectionBodyContent";
 import ShortCalendar from "layout/ShortCalendar";
-import React, { useEffect, useState } from "react";
+
+import styles from "./PreOrderDelivery.module.css";
 
 const ID_3 = "id3";
 
@@ -30,16 +33,16 @@ function PreOrderDelivery({ checked3, setChecked1, setChecked2, setChecked3 }) {
       </ContentBodyTitle>
       <SectionBodyContent>
         <OnOffButton id={ID_3} onChange={handleChange} checked={checked3} />
-        <div>
-          <span>주문 시간</span>
+        <div className={styles.content}>
+          <p>주문 시간</p>
           <Calendar disabled={disabled} />
-          <span>~</span>
+          <p>~</p>
           <Calendar setTime={setOrderEndTime} disabled={disabled} />
         </div>
-        <div>
-          <span>새벽 배송</span>
+        <div className={styles.content}>
+          <p>새벽 배송</p>
           <ShortCalendar disabled={disabled} endTime={orderEndTime} />
-          <span>일반 배송</span>
+          <p>일반 배송</p>
           <ShortCalendar disabled={disabled} endTime={orderEndTime} />
         </div>
       </SectionBodyContent>

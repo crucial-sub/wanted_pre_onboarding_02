@@ -14,7 +14,7 @@ const Category = () => {
     <SectionBody className={styles.container}>
       <CategoryProvider>
         <ContentBodyTitle>
-          <p>카테고리</p>
+          <p>카테고리 * </p>
         </ContentBodyTitle>
         <SectionBodyContent>
           <div className={styles.container}>

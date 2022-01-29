@@ -77,8 +77,8 @@ const Admin = () => {
           <svg></svg>
         </nav>
         <div>
-          <div>
-            <div>상품 등록</div>
+          <div className={styles.label}>
+            <div className={styles.sectionName}>상품 등록</div>
             <Button Button tag="save">
               저장하기
             </Button>

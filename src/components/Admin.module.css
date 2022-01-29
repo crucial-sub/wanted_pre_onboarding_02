@@ -65,8 +65,10 @@
   flex-direction: column;
   width: 200px;
   border-right: 2px solid var(--maincolor-grey);
+  position: fixed;
+  left: 0;
 }
-rgb(227, 227, 227) .left-nav div {
+.left-nav div {
   margin: 0;
   padding: 12px;
   padding-left: 22px;
@@ -87,6 +89,17 @@ rgb(227, 227, 227) .left-nav div {
 }
 
 .left-nav li {
-  font-size: large;
+  font-size: 16px;
   font-weight: 500;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.sectionName {
+  margin-left: 20px;
 }

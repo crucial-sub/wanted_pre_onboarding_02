@@ -13,7 +13,7 @@ const IntroInfo = () => {
   };
   return (
     <SectionBody className={styles.container}>
-      <ContentBodyTitle>상품 구성 소개 정보</ContentBodyTitle>
+      <ContentBodyTitle>상품 구성 소개 정보*</ContentBodyTitle>
       <SectionBodyContent>
         <Input
           className={styles.info__input}

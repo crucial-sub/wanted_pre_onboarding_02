@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPeriodActions } from "store";
 import userSelectionMockData from "utils/product-period-data";
 
-import stylse from "./ProductExposurePeriod.module.css";
+import styles from "./ProductExposurePeriod.module.css";
 
 const ProductExposurePeriod = () => {
   const dispatch = useDispatch();
@@ -32,11 +32,15 @@ const ProductExposurePeriod = () => {
   ));
 
   return (
-    <SectionBody className={stylse.exposure}>
+    <SectionBody className={styles.exposure}>
       <ContentBodyTitle>상품 노출 기한</ContentBodyTitle>
       <SectionBodyContent>
         <ul>{userSelectionLists}</ul>
-        <Calendar /> ~ <Calendar />
+        <div className={styles.content}>
+          <Calendar />
+          <p>~</p>
+          <Calendar />
+        </div>
       </SectionBodyContent>
     </SectionBody>
   );

@@ -1,3 +1,7 @@
+.content {
+  padding: 20px;
+}
+
 .content ul {
   display: inline-flexbox;
 }
@@ -6,6 +10,8 @@
   list-style: none;
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
+  padding-left: 20px;
 }
 
 .content p {

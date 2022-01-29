@@ -4,10 +4,22 @@
 .checkbox,
 .selected {
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  margin-right: 0px;
+  padding: 10px;
+  overflow: scroll;
 }
 
 .innerContainer {
   display: flex;
+  align-content: center;
+  align-items: center;
 }
 
 .setNone {

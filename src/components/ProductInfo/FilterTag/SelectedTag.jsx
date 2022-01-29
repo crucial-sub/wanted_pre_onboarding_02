@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { ItemContext } from "store/Contexts/FilterTag";
 import SelectedListItem from "./SelectedListItem";
 
+import uuid from "utils/uuid";
+
 import styles from "./SelectedTag.module.css";
 const SelectedTag = () => {
   const { items } = useContext(ItemContext);
@@ -9,7 +11,9 @@ const SelectedTag = () => {
   return (
     <div className={styles.container}>
       {items.map((value) => {
-        return <SelectedListItem>{value}</SelectedListItem>;
+        return (
+          <SelectedListItem key={crypto.randomUUID()}>{value}</SelectedListItem>
+        );
       })}
     </div>
   );

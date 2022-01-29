@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./Input.module.css";
-const Input = (props) => {
+const Input = React.forwardRef((props, ref) => {
   const {
     type = "text",
     name = "",
@@ -10,7 +10,6 @@ const Input = (props) => {
     onChange,
     onFocus,
     onBlur,
-    ref,
     id = "",
     className = "",
     required = true,
@@ -30,6 +29,6 @@ const Input = (props) => {
       required={required}
     />
   );
-};
+});
 
 export default Input;

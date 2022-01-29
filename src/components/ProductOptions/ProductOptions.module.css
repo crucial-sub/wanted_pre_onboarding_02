@@ -2,10 +2,33 @@
   display: flex;
   flex-direction: column;
 }
-
+.optionAddContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .optionContainer {
   margin-top: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(219, 219, 219);
+  padding: 20px;
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.beforeContainer {
+  height: 300px;
+  background-color: rgb(219, 219, 219);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toRight {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 
 .imgContainer {
@@ -17,13 +40,14 @@
 }
 
 .optionContents {
+  width: 800px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   margin-top: 20px;
   border: 0.1px solid rgb(202, 201, 201);
-  padding: 20px;
   border-radius: 3px;
+  padding: 10px;
 }
 
 .optionBtn {
@@ -35,15 +59,23 @@
   width: 80px;
   height: 40px;
 }
+.deleteBtn {
+  width: 80px;
+}
 .inputOption {
-  width: 1000px;
+  width: 100%;
   height: 55px;
   margin-top: 20px;
   border-radius: 3px;
   border-width: 1px;
   font-size: 16px;
-  padding-left: 15px;
 }
+
+.addOptionsetBtn {
+  width: 150px;
+  margin-right: 10px;
+}
+
 .inputSmall {
   width: 100%;
   margin-top: 20px;

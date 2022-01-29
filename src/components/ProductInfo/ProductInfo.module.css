@@ -14,6 +14,11 @@
   position: relative;
   right: 80px;
 }
+.filter__filtertag {
+  font-size: 10pt;
+  padding: 5px;
+  padding-left: 7px;
+}
 .name__input {
   width: 300px;
 }
