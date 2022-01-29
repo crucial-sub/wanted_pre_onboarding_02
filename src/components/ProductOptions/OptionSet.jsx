@@ -1,23 +1,38 @@
 import React, { useState } from "react";
 import OptionEditor from "components/ProductOptions/OptionEditor";
-import OptionList from "components/ProductOptions/OptionList";
 import uuid from "utils/uuid";
 import OptionItem from "./OptionItem";
 
-const OptionSet = ({ onDelete, onCreate, optionList, deleteOptionSet, id }) => {
-  const optionListId = optionList.id;
-  const clickHandler = () => {
-    console.log(`clickHandler${optionList.id}`);
-    deleteOptionSet(optionList.id);
-    //onDelete()
+const OptionSet = ({ name, optionSetList, setOptionSetList, set }) => {
+  const [optNum, setOptNum] = useState(0);
+  const [optionList, setOptionList] = useState([optNum]);
+  const delSet = (e) => {
+    const target = e.target.name;
+    const newOptionSetList = optionSetList.filter((set) => set !== target);
+    setOptionSetList(newOptionSetList);
   };
+
   return (
-    <>
-      <button onClick={clickHandler}>삭제</button>
-      <OptionEditor onCreate={onCreate} optionListId={optionList.id} />
-      <OptionList onDelete={onDelete} {...optionList} />
-      <OptionItem onDelete={onDelete} id={id} optionListId={optionListId} />
-    </>
+    <div name={set}>
+      <button name={set} onClick={delSet}>
+        삭제
+      </button>
+      <OptionEditor
+        optNum={optNum}
+        setOptNum={setOptNum}
+        setOptionList={setOptionList}
+      />
+      {optionList.map((opt, i) => (
+        <OptionItem
+          key={i}
+          optionList={optionList}
+          setOptionList={setOptionList}
+          optionSetList={optionSetList}
+          setOptionSetList={setOptionSetList}
+          name={i}
+        />
+      ))}
+    </div>
   );
 };
 

@@ -1,28 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../ProductOptions/ProductOptions.module.css";
 import Input from "layout/Input";
 import PlusOption from "./PlusOption";
 
-const OptionItem = ({ onDelete, id, optionListId }) => {
-  const [optionProduct, setOptionProduct] = useState([]);
-
-  const addOptionProduct = () => {
-    const newOptionProduct = {
-      id: crypto.randomUUID(),
-    };
-    setOptionProduct([...optionProduct, newOptionProduct]);
-  };
-
-  const deleteOption = (targetId) => {
-    console.log(`${id}가 삭제되었습니다.`);
-    console.log("asd", targetId);
-
-    const newOptionProduct = optionProduct.filter((it) => it.id !== targetId);
-    setOptionProduct(newOptionProduct);
+const OptionItem = ({ optionList, setOptionList, setOptionSetList, name }) => {
+  const delOpt = (e) => {
+    const targetI = Number(e.target.name);
+    if (optionList.length === 1) {
+      setOptionSetList((list) => list.filter((set, i) => i !== targetI));
+    } else {
+      setOptionList((list) => list.filter((set, i) => i !== targetI));
+    }
   };
 
   const [option, setOption] = useState({
-    optionId: id,
+    optionId: name,
     optionName: "",
     price: "",
     salePrice: "",
@@ -40,7 +32,7 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
       ...option,
       [e.target.name]: e.target.value,
     });
-    console.log(option);
+    console.log("change");
   };
 
   const handleNumberChangeState = (e) => {
@@ -56,7 +48,6 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
       });
     }
     e.preventDefault();
-    console.log(option);
     return null;
   };
 
@@ -64,12 +55,26 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
     ((option.price - option.salePrice) / option.price) * 100
   );
 
+  const [plusOptNum, setPlusOptNum] = useState(0);
+  const [plusOptionList, setPlusOptionList] = useState([0]);
+
+  const addPlusOption = () => {
+    setPlusOptNum((prev) => prev + 1);
+    setPlusOptionList((state) => [...state, plusOptNum]);
+    console.log(plusOptNum, plusOptionList);
+  };
+
+  const deleteOption = (e) => {
+    const newPlusOptionList = plusOptionList.filter(
+      (it, i) => i !== Number(e.target.name)
+    );
+    console.log(newPlusOptionList);
+    setPlusOptionList(newPlusOptionList);
+  };
+
   return (
-    <div className={style.optionContents}>
-      <button
-        className={style.optionBtn}
-        onClick={() => onDelete(optionListId, id)}
-      >
+    <div name={name} className={style.optionContents}>
+      <button className={style.optionBtn} onClick={delOpt}>
         삭제
       </button>
       <Input
@@ -115,14 +120,11 @@ const OptionItem = ({ onDelete, id, optionListId }) => {
         </select>
       </div>
       <div>
-        {optionProduct.map((it, idx) => (
-          <PlusOption
-            key={option.id}
-            deleteOption={() => deleteOption(it.id)}
-          />
+        {plusOptionList.map((it, i) => (
+          <PlusOption key={i} deleteOption={deleteOption} name={i} />
         ))}
       </div>
-      <button onClick={addOptionProduct}>추가 옵션 상품 추가</button>
+      <button onClick={addPlusOption}>추가 옵션 상품 추가</button>
     </div>
   );
 };

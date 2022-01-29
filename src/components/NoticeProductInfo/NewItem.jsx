@@ -9,10 +9,10 @@ function NewItem({
   order,
   handleDelete,
 }) {
-  const handleChange = (e) => {
+  const handleChangeTitle = (e) => {
     setNewItemTitle(e.target.value);
   };
-  const handleChange2 = (e) => {
+  const handleChangeContent = (e) => {
     setNewItemContent(e.target.value);
   };
 
@@ -22,14 +22,14 @@ function NewItem({
         <input
           type="text"
           placeholder="항목 제목 자유 입력"
-          onChange={handleChange}
+          onChange={handleChangeTitle}
           value={newItemTitle}
           required
         />
         <input
           type="text"
           placeholder="내용을 입력해주세요."
-          onChange={handleChange2}
+          onChange={handleChangeContent}
           value={newItemContent}
           required
         />

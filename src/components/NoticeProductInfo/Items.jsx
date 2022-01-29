@@ -4,7 +4,7 @@ import Item from "./Item";
 import styles from "./Items.module.css";
 import NewItem from "./NewItem";
 
-function Items({ order, name, handleDeleteItemBox, setItemsList }) {
+function Items({ order, name, handleDeleteItemBox }) {
   const [labelArr, setLabelArr] = useState([
     "제품명 / 중량",
     "원산지 / 원재료 함량",
@@ -33,9 +33,7 @@ function Items({ order, name, handleDeleteItemBox, setItemsList }) {
   const handleDelete = (e) => {
     e.preventDefault();
     const targetI = Number(e.target.name);
-    if (targetI === 5) {
-      setItemsList((list) => list.filter((items, i) => i !== Number(name)));
-    } else if (targetI > 5) {
+    if (targetI >= 5) {
       setLabelArr((arr) => arr.filter((item, i) => i !== targetI));
     } else {
       setNewItemTitle("");

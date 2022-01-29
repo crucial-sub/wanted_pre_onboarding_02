@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import OptionItem from "components/ProductOptions/OptionItem";
 
 const OptionList = ({ onDelete, optionList, id }) => {
   const optionListId = id;
+  console.log("i am opli:", optionList);
 
   return (
     <div>
@@ -12,14 +13,10 @@ const OptionList = ({ onDelete, optionList, id }) => {
           {...option}
           optionListId={optionListId}
           onDelete={onDelete}
+          id={option.id}
         />
       ))}
     </div>
   );
 };
-
-OptionList.defaultProps = {
-  optionList: [],
-};
-
 export default OptionList;

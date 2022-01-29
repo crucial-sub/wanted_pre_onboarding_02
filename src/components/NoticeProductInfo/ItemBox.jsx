@@ -23,7 +23,6 @@ function ItemBox() {
           key={i}
           name={i}
           handleDeleteItemBox={handleDeleteItemBox}
-          setItemsList={setItemsList}
         />
       ))}
       <button onClick={handleClick}>정보 고시 추가</button>
