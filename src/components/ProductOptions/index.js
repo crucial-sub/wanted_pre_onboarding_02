@@ -3,7 +3,6 @@ import SectionWrapper from "layout/Section/SectionWrapper";
 import SectionHeader from "layout/Section/SectionHeader";
 import OptionItem from "components/ProductOptions/OptionItem";
 
-import uuid from "utils/uuid";
 import OptionSet from "./OptionSet";
 
 const ProductOptionIdx = () => {

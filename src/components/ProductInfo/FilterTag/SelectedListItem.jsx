@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
-import { ItemContext } from "./Contexts";
+import { useContext } from "react";
+import { ItemContext } from "store/Contexts/FilterTag";
 import styles from "./SelectedListItem.module.css";
 const SelectedListItem = ({ children }) => {
-  const { items, setItems, setIsShow } = useContext(ItemContext);
+  const { items, setItems } = useContext(ItemContext);
   const onRemove = (e) => {
     setItems(
       items.filter(

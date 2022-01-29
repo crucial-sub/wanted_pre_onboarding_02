@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 
-import { CategoryContext } from "components/ProductInfo/Category/Contexts";
+import { CategoryContext } from "store/Contexts/Category";
 
 import styles from "./SelectedCategory.module.css";
 import Button from "layout/Button";
-import { style } from "@mui/system";
 const SelectedCategory = ({ value, checked }) => {
   const { cateObject, setCateObject } = useContext(CategoryContext);
 

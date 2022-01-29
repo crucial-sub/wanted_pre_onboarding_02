@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import OptionItem from "components/ProductOptions/OptionItem";
 
 const OptionList = ({ onDelete, optionList, id }) => {

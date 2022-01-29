@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { ItemContext } from "./Contexts";
+import { useContext } from "react";
+import { ItemContext } from "store/Contexts/FilterTag";
 import styles from "./ListItem.module.css";
 const ListItem = ({ children }) => {
   const { items, setItems, setIsShow } = useContext(ItemContext);

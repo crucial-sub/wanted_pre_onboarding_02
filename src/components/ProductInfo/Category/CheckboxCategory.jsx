@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import Checkbox from "./Checkbox";
-import { CategoryContext } from "components/ProductInfo/Category/Contexts";
+import { CategoryContext } from "store/Contexts/Category";
 import SelectedCategory from "./SelectedCategory";
 
 import styles from "./CheckboxCategory.module.css";

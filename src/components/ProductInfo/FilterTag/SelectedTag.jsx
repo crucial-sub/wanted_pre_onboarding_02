@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { ItemContext } from "./Contexts";
+import { useContext } from "react";
+import { ItemContext } from "store/Contexts/FilterTag";
 import SelectedListItem from "./SelectedListItem";
 
 import styles from "./SelectedTag.module.css";

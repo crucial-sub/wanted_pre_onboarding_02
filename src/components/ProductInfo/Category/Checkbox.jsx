@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CategoryContext } from "./Contexts";
+import { CategoryContext } from "store/Contexts/Category";
 
 import Check from "layout/Check";
 const Checkbox = ({ value, checked }) => {
