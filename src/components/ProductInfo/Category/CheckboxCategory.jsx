@@ -13,7 +13,6 @@ const CheckboxCategory = () => {
   const handleIsAllFalse = () => {
     for (const [cate, bool] of Object.entries(cateObject)) {
       if (bool === true) {
-        console.log(cate, bool);
         setIsAllFalse(false);
         break;
       }

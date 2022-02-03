@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
-import SectionBody from "layout/Section/SectionBody";
 import SectionBodyContent from "layout/Section/SectionBodyContent";
 import UploadInput from "components/UploadImages/UploadInput";
 import Button from "layout/Button";
@@ -18,14 +17,17 @@ const AddImage = ({ multiple }) => {
   const changeFileHandler = (e) => {
     const files = e.target.files;
 
-    setUploadedImg((prev) => {
-      return [{ id: files.id, name: files.name }, ...prev];
-    });
+    for (let i = 0; i < files.length; i++) {
+      setUploadedImg((prev) => [
+        { id: Math.random(), name: files[i].name },
+        ...prev,
+      ]);
+    }
   };
 
   const removeHandler = (e) => {
     const buttonId = e.target.id;
-    setUploadedImg(uploadedImg.filter((data) => data.id !== buttonId));
+    setUploadedImg(uploadedImg.filter((data) => data.id != buttonId));
   };
 
   return (
@@ -41,12 +43,12 @@ const AddImage = ({ multiple }) => {
       <ul>
         {uploadedImg.map((data) => {
           return (
-            <li key={data.id}>
+            <div className={styles.printoutput} key={Math.random()}>
               <div>{data.name}</div>
               <Button id={data.id} tag="xBadge" onClick={removeHandler}>
                 ×
               </Button>
-            </li>
+            </div>
           );
         })}
       </ul>

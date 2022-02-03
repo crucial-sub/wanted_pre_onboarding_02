@@ -1,10 +1,11 @@
-import PreOrderDelivery from "./PreOrderDelivery";
-import ProductDepartureDate from "./ProductDepartureDate";
-import Visiting from "./Visiting";
+import { useState } from "react";
 
 import SectionWrapper from "layout/Section/SectionWrapper";
 import SectionHeader from "layout/Section/SectionHeader";
-import { useState } from "react";
+
+import ProductDepartureDate from "./ProductDepartureDate";
+import PreOrderDelivery from "./PreOrderDelivery";
+import Visiting from "./Visiting";
 
 export const ProductDelivery = () => {
   const [checked1, setChecked1] = useState(false);

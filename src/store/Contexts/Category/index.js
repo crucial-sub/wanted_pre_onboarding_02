@@ -9,10 +9,11 @@ const CategoryProvider = ({ children }) => {
   const categoriesBool = [...Array(categories.length).fill(false)];
 
   let result = {};
-  categories.forEach((cate, i) => (result[i] = categoriesBool[i]));
+  categories.forEach((cate, i) => {
+    result[cate] = categoriesBool[i];
+  });
 
   const [cateObject, setCateObject] = useState(result);
-
   return (
     <CategoryContext.Provider
       value={{

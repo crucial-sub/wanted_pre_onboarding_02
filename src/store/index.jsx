@@ -33,24 +33,37 @@ const imgUploadSlice = createSlice({
   },
 });
 
-// const optionInitialState = { optionSet: {}, option: {}, smallOption: {}  }
-// const optionSlice = createSlice({
-//   name: "option",
-//   initialState: optionalInitialState,
-//   reducers: {
-//   optionSet(state) {
-//   state.optionSet
-// },
-//   option() {},
-//   smallOption() {},
-// } 
-//  });
+const optionInitialState = {
+  optionSet: [],
+  option: [],
+  smallOption: [],
+};
+const optionSlice = createSlice({
+  name: "option",
+  initialState: optionInitialState,
+  reducers: {
+    optionSet(state, action) {
+      state.optionSet = action.payload;
+    },
+    option(state, action) {
+      state.optionSet = action.payload;
+    },
+    smallOption(state, action) {
+      state.smallOption = action.payload;
+    },
+  },
+});
 
 const store = configureStore({
-  reducer: { period: setPeriodSlice.reducer, upload: imgUploadSlice.reducer },
+  reducer: {
+    period: setPeriodSlice.reducer,
+    upload: imgUploadSlice.reducer,
+    option: optionSlice.reducer,
+  },
 });
 
 export const setPeriodActions = setPeriodSlice.actions;
 export const imgUploadActions = imgUploadSlice.actions;
+export const optionActions = optionSlice.actions;
 
 export default store;

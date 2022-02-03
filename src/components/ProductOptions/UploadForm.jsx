@@ -18,7 +18,10 @@ const UploadForm = () => {
   return (
     <form>
       <div className={style.fileDropper}>
-        <img src={imgSrc} className={style.imgPreview} alt="첨부 사진" />
+        {imgSrc && (
+          <img src={imgSrc} className={style.imgPreview} alt="첨부 사진" />
+        )}
+
         <label htmlFor="image">{fileName}</label>
         <input id="image" type="file" onChange={imageSelecthandler} />
       </div>

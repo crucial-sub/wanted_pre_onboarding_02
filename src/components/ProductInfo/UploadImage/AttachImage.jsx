@@ -3,20 +3,21 @@ import React, { useContext, useRef } from "react";
 import { ImageContext } from "components/ProductInfo/UploadImage/Contexts";
 
 import Button from "layout/Button";
+let tempId = 0;
 const AttachImage = ({ multiple }) => {
   const { images, setImages } = useContext(ImageContext);
   const fileInput = useRef();
+
   const onLoadFile = (e) => {
     if (multiple) {
-      let files = [];
       Object.entries(e.target.files).map(([id, item]) => {
-        return files.push(item.name);
+        setImages((prev) => {
+          return [...prev, { id: tempId++, name: item.name }];
+        });
       });
-      setImages(images.concat(files));
-
       e.target.value = "";
     } else {
-      setImages([e.target.files[0].name]);
+      setImages([{ id: 0, name: e.target.files[0].name }]);
       e.target.value = "";
     }
   };

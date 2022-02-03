@@ -3,7 +3,7 @@ import styles from "./SectionBodyContent.module.css";
 
 const SectionBodyContent = (props) => {
   return (
-    <div className={`${styles.content} ${props.className}`}>
+    <div className={`${styles.content} ${props.className}`} ref={props.ref}>
       {props.children}
     </div>
   );

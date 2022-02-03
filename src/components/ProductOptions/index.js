@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import SectionWrapper from "layout/Section/SectionWrapper";
 import SectionHeader from "layout/Section/SectionHeader";
-import OptionItem from "components/ProductOptions/OptionItem";
 
 import Button from "layout/Button";
 import style from "components/ProductOptions/ProductOptions.module.css";
 
-import uuid from "utils/uuid";
 import OptionSet from "./OptionSet";
+import { useDispatch, useSelector } from "react-redux";
+import { optionActions } from "store";
 
 const ProductOptionIdx = () => {
+  const dispatch = useDispatch();
+  const testOptionSet = useSelector((state) => state.option.optionSet);
+
   const [optionSetList, setOptionSetList] = useState([]);
 
   const onCreate = (targetId, newOption) => {
@@ -17,12 +20,10 @@ const ProductOptionIdx = () => {
       id: crypto.randomUUID(),
     };
 
-    // 어떤 리스트에 추가할 것인가? => id에 해당하는 값을...
-    // 어떤 option을 추가할 것인가?
     setOptionSetList((prev) =>
       prev.map((item) => {
-        if (item.id !== targetId) return item; // 원래 아이템을 그대로 둔다!
-        // 새로운 after 상태를 만든다!
+        if (item.id !== targetId) return item;
+
         return {
           ...item,
           optionList: [...item.optionList, newOption],
@@ -50,8 +51,12 @@ const ProductOptionIdx = () => {
       id: crypto.randomUUID(),
       optionList: [],
     };
+
+    dispatch(optionActions.option(newOptionList));
     setOptionSetList((prev) => [...prev, newOptionList]);
   };
+
+  console.log(testOptionSet);
 
   const deleteOptionSet = (targetId) => {
     const newOptionSetList = optionSetList.filter((it) => it.id !== targetId);
